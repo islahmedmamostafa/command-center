@@ -1,0 +1,23 @@
+{
+  "title": "Command Center",
+  "description": "A daily command center: your calendar, tickets, messages and meeting notes on one page, with a ranked to-do list, a review queue for incoming requests and a weekly update that writes itself.",
+  "capabilities": {
+    "mcp": {
+      "servers": [
+        { "server": "Google Calendar", "tools": ["list_events", "create_event"] },
+        { "server": "Atlassian", "tools": ["searchJiraIssuesUsingJql", "searchConfluenceUsingCql", "getAccessibleAtlassianResources"] },
+        { "server": "Slack", "tools": ["slack_search_public_and_private", "slack_read_user_profile"] },
+        { "server": "Fireflies", "tools": ["fireflies_get_transcripts"] },
+        { "server": "Figma", "tools": ["get_metadata"] }
+      ]
+    },
+    "db": {
+      "rules": [
+        { "path": "", "read": "view", "write": "admin" },
+        { "path": "data/users/{self}", "write": "interact" }
+      ]
+    },
+    "sample": {},
+    "user": { "scopes": ["profile"] }
+  }
+}
